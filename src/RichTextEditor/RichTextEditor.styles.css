@@ -1,0 +1,71 @@
+.control-group {
+  border-bottom: 1px solid #ccc;
+  padding: 8px;
+}
+
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.button-group button {
+  border: 1px solid #ccc;
+  background: white;
+  border-radius: 4px;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+.button-group button:hover {
+  background: #f0f0f0;
+}
+
+.button-group button.is-active {
+  background: #e0e0e0;
+}
+
+.button-group button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.divider {
+  width: 1px;
+  margin: 0 8px;
+  background: #ccc;
+}
+
+/* Editor content area */
+.ProseMirror {
+  padding: 16px;
+  min-height: 200px;
+  outline: none;
+}
+
+.ProseMirror p {
+  margin: 1em 0;
+}
+
+.color-picker select,
+.highlight-picker select {
+  padding: 4px 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: white;
+  cursor: pointer;
+}
+
+.color-picker select:hover,
+.highlight-picker select:hover {
+  background: #f0f0f0;
+}
+
+.color-picker input[type="color"] {
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+}
