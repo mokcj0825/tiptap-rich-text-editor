@@ -15,7 +15,7 @@ import {
   RiListUnordered,
   RiStrikethrough,
 } from 'react-icons/ri';
-import { FaHighlighter, FaYoutube } from 'react-icons/fa';
+import { FaYoutube } from 'react-icons/fa';
 import { ImClearFormatting } from 'react-icons/im';
 import { VscClearAll, VscNewline } from 'react-icons/vsc';
 import { BsTextParagraph } from 'react-icons/bs';
@@ -88,16 +88,21 @@ const MenuBar: React.FC<{ content?: string }> = ({ content }) => {
         >
           <RiCodeSSlashLine />
         </button>
-        <button
-          onClick={() => editor.chain().focus().toggleHighlight().run()}
-          className={editor.isActive('highlight') ? 'is-active' : ''}
-        >
-          <FaHighlighter />
-        </button>
+        
+        <input
+          type="color"
+          onInput={(event: React.ChangeEvent<HTMLInputElement>) => {
+            editor.chain().focus().setColor(event.target.value).run();
+          }}
+          title="Text color"
+        />
+
         <button onClick={() => editor.chain().focus().unsetAllMarks().run()}>
           <ImClearFormatting />
         </button>
+        
         <div className="divider"></div>
+        
         <button onClick={() => editor.chain().focus().clearNodes().run()}>
           <VscClearAll />
         </button>
@@ -221,16 +226,6 @@ const MenuBar: React.FC<{ content?: string }> = ({ content }) => {
         <button id="add" onClick={addYoutubeVideo}>
           <FaYoutube />
         </button>
-
-        <div className="color-picker">
-          <input
-            type="color"
-            onInput={(event: React.ChangeEvent<HTMLInputElement>) => {
-              editor.chain().focus().setColor(event.target.value).run();
-            }}
-            title="Text color"
-          />
-        </div>
       </div>
     </div>
   );

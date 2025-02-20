@@ -9,15 +9,19 @@
   gap: 4px;
 }
 
-.button-group button {
+.button-group button,
+.color-picker input[type="color"] {
+  width: 28px;
+  height: 28px;
   border: 1px solid #ccc;
   background: white;
   border-radius: 4px;
-  padding: 4px 8px;
+  padding: 5px 4px 3px;
   cursor: pointer;
 }
 
-.button-group button:hover {
+.button-group button:hover,
+.color-picker input[type="color"]:hover {
   background: #f0f0f0;
 }
 
@@ -61,11 +65,11 @@
   background: #f0f0f0;
 }
 
-.color-picker input[type="color"] {
+.color-picker input[type="color"]::-webkit-color-swatch-wrapper {
   padding: 0;
-  width: 32px;
-  height: 32px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  cursor: pointer;
+}
+
+.color-picker input[type="color"]::-webkit-color-swatch {
+  border: none;
+  border-radius: 3px;
 }
